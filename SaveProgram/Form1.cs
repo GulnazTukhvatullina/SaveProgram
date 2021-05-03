@@ -16,11 +16,14 @@ namespace SaveProgram
         public Form1()
         {
             InitializeComponent();
+            button1.Text = Settings.Default["ButName"].ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Settings.Default["ButName"] = textBox1.Text;
+            Settings.Default.Save();
+            button1.Text = Settings.Default["ButName"].ToString();
         }
     }
 }
